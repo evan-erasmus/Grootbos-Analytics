@@ -1,6 +1,6 @@
 from collections import defaultdict
 import matplotlib.pyplot as plt
-from datetime import datetime, timedelta
+from datetime import datetime
 from get_data import get_sorted_data
 
 

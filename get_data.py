@@ -1,7 +1,5 @@
 import csv
 import os
-import sys
-from iteration_utilities import unique_everseen
 
 data_dir = './Data'
 filenames = os.listdir(data_dir)
@@ -30,7 +28,6 @@ def get_sorted_data():
         for record in set:
             result_data.append(record)
 
-    # result_data = list(unique_everseen(result_data))
     sorted_data = sorted(result_data, key=custom_sort_key)
 
     return sorted_data
