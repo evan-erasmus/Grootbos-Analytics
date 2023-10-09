@@ -54,26 +54,11 @@ def plot_data(data=get_sorted_data()):
 
     plt.figure(figsize=(10, 6))
 
-    match graph_type:
-        case 1:
-            for i in other_axis:
-                plt.plot(datetime_values, data_headers[i], label=i, marker='o', linestyle='-')
-            plt.xlabel('Date and Time')
-            plt.ylabel('Values')
-            plt.title(f'{", ".join(other_axis)} Data Over Time')
-        case 2:
-            for i in other_axis:
-                plt.bar(datetime_values, data_headers[i])
-            plt.xlabel('Date and Time')
-            plt.ylabel('Values')
-            plt.title(f'{", ".join(other_axis)} Data Over Time')
-        # case 3:
-        #
-        # case 4:
-        #
-        # case 5:
-        #
-        # case 6:
+    plt.plot(datetime_values, data_headers['pm10'], label='PM10', marker='o', linestyle='-')
+    plt.plot(datetime_values, data_headers['pm2p5'], label='PM2.5', marker='o', linestyle='-')
+    plt.xlabel('Date and Time')
+    plt.ylabel('Values')
+    plt.title('PM2.5 and PM10 Data Over Time')
 
     plt.xticks(rotation=90)
 
