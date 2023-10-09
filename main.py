@@ -49,13 +49,13 @@ def get_plot():
 
     if choice == 1:
         if get_hourly_intervals():
-            print(plot_averages_hourly(get_file()))
+            print(plot_averages_hourly(get_file()[0], get_file()[1]))
         else:
             print(plot_averages(get_file()))
         exit(1)
     elif choice == 2:
         if get_hourly_intervals():
-            print(plot_data_hourly(get_file()))
+            print(plot_data_hourly(get_file()[0], get_file()[1]))
         else:
             print(plot_data(get_file()))
         exit(1)

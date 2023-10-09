@@ -64,8 +64,10 @@ def plot_averages(data=get_sorted_data()):
     plt.show()
 
 
-def plot_averages_hourly(data=get_sorted_data()):
+def plot_averages_hourly(data=get_sorted_data(), filename='Unnamed'):
     date_intervals = defaultdict(lambda: {'pm2p5_values': [], 'pm10_values': []})
+
+    filename = filename.replace('.csv', '.png')
 
     for entry in data:
         datetime_str = entry['localDate'] + ' ' + entry['localTime']
@@ -97,11 +99,14 @@ def plot_averages_hourly(data=get_sorted_data()):
     plt.legend()
 
     plt.tight_layout()
+    plt.savefig(filename)
     plt.show()
 
 
-def plot_data_hourly(data=get_sorted_data()):
+def plot_data_hourly(data=get_sorted_data(), filename='Unnamed'):
     date_intervals = defaultdict(lambda: {'pm2p5_values': [], 'pm10_values': []})
+
+    filename = filename.replace('.csv', '.png')
 
     for entry in data:
         datetime_str = entry['localDate'] + ' ' + entry['localTime']
@@ -132,4 +137,5 @@ def plot_data_hourly(data=get_sorted_data()):
     plt.legend()
 
     plt.tight_layout()
+    plt.savefig(filename)
     plt.show()

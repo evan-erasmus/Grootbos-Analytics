@@ -37,10 +37,7 @@ def get_specific_filedata(choice):
     combined_data = []
     result_data = []
 
-    i = 0
-
-    # for filename in filenames:
-    csv_file_path = f'{data_dir}/{filenames[i]}'
+    csv_file_path = f'{data_dir}/{filenames[choice - 1]}'
     data_list = []
 
     with open(csv_file_path, mode='r', newline='') as file:
@@ -57,7 +54,7 @@ def get_specific_filedata(choice):
     # result_data = list(unique_everseen(result_data))
     sorted_data = sorted(result_data, key=custom_sort_key)
 
-    return sorted_data
+    return sorted_data, filenames[choice - 1]
 
 
 def custom_sort_key(item):
